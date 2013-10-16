@@ -177,23 +177,7 @@ namespace Calculator.Separation
 
         private void calc()
         {
-
-            switch (strOper)
-            {
-
-                case "+":
-                    dblAcc += dblSec;
-                    break;
-                case "-":
-                    dblAcc -= dblSec;
-                    break;
-                case "*":
-                    dblAcc *= dblSec;
-                    break;
-                case "/":
-                    dblAcc /= dblSec;
-                    break;
-            }
+            dblAcc = Calculator.Compute(strOper, dblAcc, dblSec);
 
             strOper = "=";
             blnFrstOpen = true;
