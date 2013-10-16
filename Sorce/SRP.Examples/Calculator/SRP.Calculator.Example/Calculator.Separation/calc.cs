@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Calculator.Separation
 {
-    public class win : Form
+    public class CalculatorForm : Form
     {
 
         Button[] b = new Button[10];
@@ -17,20 +17,25 @@ namespace Calculator.Separation
         bool blnClear, blnFrstOpen;
         String strOper;
 
-        public win()
+        public CalculatorForm()
         {
             try
             {
                 this.Text = "Calculator";
-                panCalc = new Panel();
-                txtCalc = new TextBox();
+                txtCalc = new TextBox
+                              {
+                                  Location = new Point(10, 10),
+                                  Size = new Size(150, 10),
+                                  ReadOnly = true,
+                                  RightToLeft = RightToLeft.Yes
+                              };
 
-                txtCalc.Location = new Point(10, 10);
-                txtCalc.Size = new Size(150, 10);
-                txtCalc.ReadOnly = true;
-                txtCalc.RightToLeft = RightToLeft.Yes;
-                panCalc.Size = new Size(200, 200);
-                panCalc.BackColor = Color.Aqua;
+                panCalc = new Panel
+                              {
+                                  Size = new Size(200, 200), 
+                                  BackColor = Color.Aqua
+                              };
+
                 panCalc.Controls.Add(txtCalc);
                 addButtons(panCalc);
                 this.Size = new Size(200, 225);
@@ -40,7 +45,7 @@ namespace Calculator.Separation
                 dblSec = 0;
                 blnFrstOpen = true;
                 blnClear = false;
-                strOper = new String('=', 1);
+                strOper = "=";
             }
             catch (Exception e)
             {
@@ -52,11 +57,13 @@ namespace Calculator.Separation
         {
             for (int i = 0; i <= 9; i++)
             {
-                b[i] = new Button();
-                b[i].Text = Convert.ToString(i);
-                b[i].Size = new Size(25, 25);
-                b[i].BackColor = Color.White;
-                b[i].Click += new EventHandler(btn_clk);
+                b[i] = new Button
+                           {
+                               Text = Convert.ToString(i), 
+                               Size = new Size(25, 25), 
+                               BackColor = Color.White
+                           };
+                b[i].Click += btn_clk;
                 p.Controls.Add(b[i]);
             }
             b[0].Location = new Point(10, 160);
@@ -72,54 +79,68 @@ namespace Calculator.Separation
             b[6].Location = new Point(90, 80);
             b[9].Location = new Point(90, 40);
 
-            bDot = new Button();
-            bDot.Size = new Size(25, 25);
-            bDot.Location = new Point(50, 160);
-            bDot.BackColor = Color.White;
-            bDot.Text = ".";
-            bDot.Click += new EventHandler(btn_clk);
+            bDot = new Button
+                       {
+                           Size = new Size(25, 25), 
+                           Location = new Point(50, 160), 
+                           BackColor = Color.White, 
+                           Text = "."
+                       };
+            bDot.Click += btn_clk;
 
-            bPlus = new Button();
-            bPlus.Size = new Size(25, 25);
-            bPlus.Location = new Point(130, 160);
-            bPlus.BackColor = Color.White;
-            bPlus.Text = "+";
-            bPlus.Click += new EventHandler(btn_Oper);
+            bPlus = new Button
+                        {
+                            Size = new Size(25, 25), 
+                            Location = new Point(130, 160), 
+                            BackColor = Color.White, 
+                            Text = "+"
+                        };
+            bPlus.Click += btn_Oper;
 
-            bSub = new Button();
-            bSub.Size = new Size(25, 25);
-            bSub.Location = new Point(130, 120);
-            bSub.BackColor = Color.White;
-            bSub.Text = "-";
-            bSub.Click += new EventHandler(btn_Oper);
+            bSub = new Button
+                       {
+                           Size = new Size(25, 25), 
+                           Location = new Point(130, 120), 
+                           BackColor = Color.White, 
+                           Text = "-"
+                       };
+            bSub.Click += btn_Oper;
 
-            bMul = new Button();
-            bMul.Size = new Size(25, 25);
-            bMul.Location = new Point(130, 80);
-            bMul.BackColor = Color.White;
-            bMul.Text = "*";
-            bMul.Click += new EventHandler(btn_Oper);
+            bMul = new Button
+                       {
+                           Size = new Size(25, 25), 
+                           Location = new Point(130, 80), 
+                           BackColor = Color.White, 
+                           Text = "*"
+                       };
+            bMul.Click += btn_Oper;
 
-            bDiv = new Button();
-            bDiv.Size = new Size(25, 25);
-            bDiv.Location = new Point(130, 40);
-            bDiv.BackColor = Color.White;
-            bDiv.Text = "/";
-            bDiv.Click += new EventHandler(btn_Oper);
+            bDiv = new Button
+                       {
+                           Size = new Size(25, 25), 
+                           Location = new Point(130, 40), 
+                           BackColor = Color.White, 
+                           Text = "/"
+                       };
+            bDiv.Click += btn_Oper;
 
-            bEqu = new Button();
-            bEqu.Size = new Size(25, 25);
-            bEqu.Location = new Point(90, 160);
-            bEqu.BackColor = Color.White;
-            bEqu.Text = "=";
-            bEqu.Click += new EventHandler(btn_equ);
+            bEqu = new Button
+                       {
+                           Size = new Size(25, 25), 
+                           Location = new Point(90, 160), 
+                           BackColor = Color.White, 
+                           Text = "="
+                       };
+            bEqu.Click += btn_equ;
 
-            bClr = new Button();
-            bClr.Size = new Size(20, 45);
-            bClr.Location = new Point(170, 40);
-            bClr.BackColor = Color.Orange;
-            bClr.Text = "AC";
-            bClr.Click += new EventHandler(btn_clr);
+            bClr = new Button
+                       {
+                           Size = new Size(20, 45), 
+                           Location = new Point(170, 40), 
+                           BackColor = Color.Orange, 
+                           Text = "AC"
+                       };
+            bClr.Click += btn_clr;
 
             p.Controls.Add(bDot);
             p.Controls.Add(bPlus);
@@ -148,7 +169,7 @@ namespace Calculator.Separation
 
         private static void Main()
         {
-            Application.Run(new win());
+            Application.Run(new CalculatorForm());
         }
 
         private void btn_Oper(object obj, EventArgs ea)
@@ -158,7 +179,7 @@ namespace Calculator.Separation
             if (blnFrstOpen)
                 dblAcc = dblSec;
             else
-                calc();
+                Calc();
 
             blnFrstOpen = false;
             blnClear = true;
@@ -166,16 +187,15 @@ namespace Calculator.Separation
 
         private void btn_clr(object obj, EventArgs ea)
         {
-            clear();
+            Clear();
         }
 
         private void btn_equ(object obj, EventArgs ea)
         {
-            calc();
-
+            Calc();
         }
 
-        private void calc()
+        private void Calc()
         {
             dblAcc = Calculator.Compute(strOper, dblAcc, dblSec);
 
@@ -185,7 +205,7 @@ namespace Calculator.Separation
             dblSec = dblAcc;
         }
 
-        private void clear()
+        private void Clear()
         {
             dblAcc = 0;
             dblSec = 0;

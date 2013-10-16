@@ -1,4 +1,5 @@
-﻿namespace Calulator.TheWrongWay
+﻿/// This code was originally taken from here: http://www.codeproject.com/Articles/1410/A-Calculator-using-C
+namespace Calulator.TheWrongWay
 {
     using System;
     using System.Windows.Forms;
