@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calulator.TheWrongWay", "Calulator.TheWrongWay\Calulator.TheWrongWay.csproj", "{1BE3DEFE-8A32-4392-A851-F3AFAE4127D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calulator.Problem", "Calulator.Problem\Calulator.Problem.csproj", "{1BE3DEFE-8A32-4392-A851-F3AFAE4127D7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuickAndDirty", "QuickAndDirty", "{D8C951FC-61C8-4C99-9513-4482FA7F6E86}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Problem", "Problem", "{D8C951FC-61C8-4C99-9513-4482FA7F6E86}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FirstStep", "FirstStep", "{0D64C335-F4D5-4F75-A03E-8B6DCADF0987}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{0D64C335-F4D5-4F75-A03E-8B6DCADF0987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Separation", "Calculator.Separation\Calculator.Separation.csproj", "{E04A8641-B187-400A-AE62-28CC6400AA18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Solution", "Calculator.Solution\Calculator.Solution.csproj", "{E04A8641-B187-400A-AE62-28CC6400AA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Separation.Tests", "Calculator.Separation.Tests\Calculator.Separation.Tests.csproj", "{F1ABC923-B659-44DA-B4EF-DB167378FC46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Solution.Tests", "Calculator.Solution.Tests\Calculator.Solution.Tests.csproj", "{F1ABC923-B659-44DA-B4EF-DB167378FC46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
